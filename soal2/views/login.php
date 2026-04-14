@@ -8,6 +8,7 @@ $e = [View::class, 'escape'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,16 +42,7 @@ $e = [View::class, 'escape'];
             border: 1px solid #999;
             font-size: 14px;
         }
-        .captcha-img {
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .captcha-img:hover {
-            opacity: 0.8;
-        }
-        .captcha-hint {
-            font-size: 11px;
-            color: #888;
+        .g-recaptcha {
             margin-top: 4px;
         }
         button {
@@ -130,17 +122,7 @@ $e = [View::class, 'escape'];
 
             <div class="form-group">
                 <label>Security Image</label>
-                <div>
-                    <img src="index.php?action=captcha&t=<?= time() ?>" alt="Security Image" class="captcha-img" id="captchaImg"
-                         onclick="this.src='index.php?action=captcha&t='+Date.now()" title="Klik untuk refresh captcha">
-                    <div class="captcha-hint">Klik gambar untuk refresh</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="captcha">Input karakter yang muncul pada tampilan diatas</label>
-                <input type="text" id="captcha" name="captcha" required maxlength="5" autocomplete="off"
-                       style="text-transform: uppercase;">
+                <div class="g-recaptcha" data-sitekey="6LeJtbUsAAAAAFimkmGH-Z65Zr_0SAC1OEXcKdJ1"></div>
             </div>
 
             <div class="btn-center">

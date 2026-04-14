@@ -6,7 +6,6 @@ class App
     private array $routes = [
         'login'       => ['AuthController', 'login'],
         'logout'      => ['AuthController', 'logout'],
-        'captcha'     => ['AuthController', 'captcha'],
         'users'       => ['UserController', 'index'],
         'user_add'    => ['UserController', 'create'],
         'user_edit'   => ['UserController', 'edit'],
@@ -24,7 +23,6 @@ class App
         $base = dirname(__DIR__);
 
         require_once __DIR__ . '/Session.php';
-        require_once __DIR__ . '/Captcha.php';
         require_once __DIR__ . '/View.php';
         require_once __DIR__ . '/Controller.php';
 

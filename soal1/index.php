@@ -1,5 +1,4 @@
 <?php
-// Soal 1 - Fibonacci Table
 
 require_once __DIR__ . '/Fibonacci.php';
 
